@@ -31,8 +31,18 @@ function EmailList({ onSelectEmail }) {
                 return;
             }
 
-            const emailKeys = data.Contents.map(item => item.Key);
-            setEmails(emailKeys.map(key => ({ key })));
+            // Create array of email objects with key and lastModified
+            const emailObjects = data.Contents.map(item => ({
+                key: item.Key,
+                lastModified: new Date(item.LastModified)
+            }));
+
+            // Sort emails by lastModified date, newest first
+            const sortedEmails = emailObjects.sort((a, b) => 
+                b.lastModified - a.lastModified
+            );
+
+            setEmails(sortedEmails);
         });
     }, []);
 
@@ -69,6 +79,9 @@ function EmailList({ onSelectEmail }) {
                         onClick={() => handleEmailSelect(email)}
                     >
                         <strong>{email.key}</strong>
+                        <div className="email-date">
+                            {email.lastModified.toLocaleString()}
+                        </div>
                     </div>
                 ))
             )}
