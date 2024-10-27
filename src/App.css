@@ -1,0 +1,29 @@
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.email-list {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+
+.email-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.email-item:hover {
+    background-color: #f9f9f9;
+}
+
+.email-view {
+    width: 70%;
+    padding-left: 10px;
+}
