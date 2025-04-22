@@ -18,13 +18,31 @@
     cursor: pointer;
     border-bottom: 1px solid #eee;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.email-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.email-to {
+    font-size: 0.9em;
+    color: #333;
+}
+
+.email-subject {
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
 }
 
 .email-date {
     font-size: 0.8em;
     color: #666;
+    align-self: flex-end;
 }
 
 .email-item:hover {
@@ -79,4 +97,31 @@
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 4px;
+}
+
+.email-filter {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-filter label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.email-filter select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.9em;
+    min-width: 200px;
+}
+
+.email-filter select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
